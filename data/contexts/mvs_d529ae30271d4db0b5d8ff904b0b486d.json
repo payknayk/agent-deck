@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_d529ae30271d4db0b5d8ff904b0b486d",
+ "title": "@minimax-bot Create a MiniMax Bot group where a wr",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\Documents",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792772187066,
+   "role": "user",
+   "type": 1,
+   "text": "@minimax-bot Create a MiniMax Bot group where a writer and a programmer co-author a tech blog post"
+  }
+ ]
+}

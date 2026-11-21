@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agent Deck — запущенные ИИ-агенты и их контекст</title>
+<meta name="description" content="Живой реестр ИИ-агентов MiniMax Code: статусы, модели, токены и контекст переписки с возможностью загрузить свой контекст." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%2334d3c8' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23a78bfa'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="16" r="3" fill="currentColor"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>AGENT&nbsp;DECK</strong>
+        <small data-i18n="brand.sub">реестр запущенных агентов</small>
+      </span>
+    </a>
+
+    <div class="topbar__meta">
+      <span class="pill pill--live" id="snapshot-age" title="Время формирования снимка">
+        <i class="dot"></i><span data-i18n="top.snapshot">снимок</span> <b id="snapshot-time">—</b>
+      </span>
+    </div>
+
+    <div class="topbar__actions">
+      <div class="seg" role="group" aria-label="Язык интерфейса">
+        <button class="seg__btn is-active" data-lang="ru">RU</button>
+        <button class="seg__btn" data-lang="en">EN</button>
+      </div>
+      <button class="icon-btn" id="theme-toggle" title="Тема" aria-label="Переключить тему">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <div class="menu" id="export-menu">
+        <button class="btn btn--ghost" id="export-btn" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M8 11l4 4 4-4"/><path d="M5 19h14"/></svg>
+          <span data-i18n="btn.export">Экспорт</span>
+        </button>
+        <div class="menu__pop" id="export-pop" hidden>
+          <button type="button" data-export="snapshot">
+            <b data-i18n="exp.snapshot">Снимок данных</b>
+            <small data-i18n="exp.snapshotSub">agents + sessions + статистика, .json</small>
+          </button>
+          <button type="button" data-export="csv">
+            <b data-i18n="exp.csv">Реестр запусков</b>
+            <small data-i18n="exp.csvSub">текущая выборка с фильтрами, .csv</small>
+          </button>
+          <button type="button" data-export="contexts">
+            <b data-i18n="exp.contexts">Все контексты</b>
+            <small data-i18n="exp.contextsSub">переписка всех сессий одним .json</small>
+          </button>
+          <button type="button" data-export="site">
+            <b data-i18n="exp.site">Сайт целиком</b>
+            <small data-i18n="exp.siteSub">HTML + данные одним .html</small>
+          </button>
+        </div>
+      </div>
+      <button class="btn btn--ghost" id="import-snapshot-btn" data-i18n="btn.import">Импорт снимка</button>
+      <button class="btn btn--primary" id="upload-jump-btn" data-i18n="btn.upload">Загрузить контекст</button>
+      <input type="file" id="snapshot-file" accept="application/json,.json" hidden />
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero__copy">
+      <span class="eyebrow" data-i18n="hero.eyebrow">MiniMax Code · локальный рантайм</span>
+      <h1 data-i18n="hero.title">Все запущенные ИИ-агенты — в одном месте</h1>
+      <p class="hero__lead" data-i18n="hero.lead">Живой снимок локального рантайма: агенты, их запуски, модели, расход токенов и полный контекст переписки. Свои контексты можно загрузить прямо в браузере — они никуда не отправляются.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="#registry" data-i18n="hero.cta1">Открыть реестр запусков</a>
+        <a class="btn btn--ghost btn--lg" href="#upload" data-i18n="hero.cta2">Загрузить свой контекст</a>
+      </div>
+      <p class="notice notice--warn" id="public-notice" hidden data-i18n="notice.public">Контексты в этом снимке опубликованы в открытом доступе — они содержат реальные пути, сообщения и рабочие данные.</p>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <!-- AGENTS -->
+  <section class="section wrap" id="agents">
+    <div class="section__head">
+      <div>
+        <h2 data-i18n="agents.title">Агенты</h2>
+        <p class="section__sub" data-i18n="agents.sub">Роли, персоны и статистика из конфигурации рантайма</p>
+      </div>
+    </div>
+    <div class="agent-grid" id="agent-grid"></div>
+  </section>
+
+  <!-- REGISTRY -->
+  <section class="section wrap" id="registry">
+    <div class="section__head">
+      <div>
+        <h2 data-i18n="reg.title">Реестр запусков</h2>
+        <p class="section__sub" data-i18n="reg.sub">Каждая сессия рантайма: статус, модель, токены, контекст</p>
+      </div>
+      <div class="section__tools">
+        <input class="input" id="search" type="search" data-i18n-ph="reg.search" placeholder="Поиск по названию, id, рабочей папке…" />
+        <select class="input input--sel" id="filter-status" data-i18n-ph="reg.allstatus"></select>
+        <select class="input input--sel" id="filter-agent" data-i18n-ph="reg.allagents"></select>
+        <select class="input input--sel" id="sort-by" data-i18n-ph="reg.sort"></select>
+      </div>
+    </div>
+    <div class="chips" id="active-filters"></div>
+    <div class="run-list" id="run-list"></div>
+    <div class="empty" id="run-empty" hidden data-i18n="reg.empty">Ничего не найдено — измените фильтры.</div>
+  </section>
+
+  <!-- UPLOAD -->
+  <section class="section wrap" id="upload">
+    <div class="section__head">
+      <div>
+        <h2 data-i18n="up.title">Загрузка контекста</h2>
+        <p class="section__sub" data-i18n="up.sub">Прикрепите файлы к агенту или запуску — хранятся только в этом браузере</p>
+      </div>
+    </div>
+
+    <div class="upload-grid">
+      <div class="card card--drop" id="dropzone" tabindex="0" role="button" aria-label="Загрузить файлы">
+        <div class="dropzone__inner">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+          <strong data-i18n="up.drop">Перетащите файлы сюда</strong>
+          <span data-i18n="up.drop2">или нажмите, чтобы выбрать · md, txt, json, csv, log</span>
+        </div>
+        <input type="file" id="file-input" multiple hidden />
+      </div>
+
+      <div class="card card--target">
+        <h3 data-i18n="up.target">Привязать к</h3>
+        <div class="field">
+          <label for="target-kind" data-i18n="up.kind">Тип цели</label>
+          <select class="input" id="target-kind">
+            <option value="session" data-i18n="up.kindSession">Запуск (сессия)</option>
+            <option value="agent" data-i18n="up.kindAgent">Агент</option>
+            <option value="global" data-i18n="up.kindGlobal">Общий архив</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="target-id" data-i18n="up.targetId">Цель</label>
+          <select class="input" id="target-id"></select>
+        </div>
+        <div class="hint" data-i18n="up.hint">Файлы читаются в браузере через File API и складываются в IndexedDB. Они не покидают устройство и не отправляются на сервер.</div>
+      </div>
+    </div>
+
+    <div class="card card--files">
+      <div class="card__head">
+        <h3 data-i18n="up.attached">Прикреплённые файлы</h3>
+        <div class="card__tools">
+          <button class="btn btn--ghost btn--sm" id="bundle-md" data-i18n="up.bundleMd">Собрать .md</button>
+          <button class="btn btn--ghost btn--sm" id="bundle-json" data-i18n="up.bundleJson">Собрать .json</button>
+          <button class="btn btn--danger btn--sm" id="clear-files" data-i18n="up.clear">Очистить</button>
+        </div>
+      </div>
+      <div id="file-list" class="file-list"></div>
+      <div class="empty" id="file-empty" data-i18n="up.empty">Пока ничего не загружено.</div>
+    </div>
+  </section>
+
+  <footer class="footer wrap">
+    <div>
+      <strong>AGENT&nbsp;DECK</strong>
+      <p data-i18n="foot.sub">Статический дашборд по данным локального рантайма MiniMax Code</p>
+    </div>
+    <div class="footer__meta">
+      <span data-i18n="foot.source">Источник</span>: <code id="foot-source">—</code><br />
+      <span data-i18n="foot.built">Собрано</span>: <code id="foot-built">—</code>
+    </div>
+  </footer>
+</main>
+
+<!-- CONTEXT DRAWER -->
+<div class="drawer" id="drawer" aria-hidden="true" inert>
+  <div class="drawer__backdrop" data-close-drawer></div>
+  <aside class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <header class="drawer__head">
+      <div class="drawer__heading">
+        <span class="status-dot" id="drawer-status"></span>
+        <div>
+          <h3 id="drawer-title">—</h3>
+          <code class="mono" id="drawer-id">—</code>
+        </div>
+      </div>
+      <button class="icon-btn" data-close-drawer aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+
+    <div class="drawer__stats" id="drawer-stats"></div>
+
+    <div class="drawer__tools">
+      <input class="input" id="ctx-search" data-i18n-ph="ctx.search" placeholder="Поиск по контексту…" />
+      <div class="card__tools">
+        <button class="btn btn--ghost btn--sm" id="ctx-copy" data-i18n="ctx.copy">Копировать</button>
+        <button class="btn btn--ghost btn--sm" id="ctx-md" data-i18n="ctx.md">Скачать .md</button>
+        <button class="btn btn--ghost btn--sm" id="ctx-json" data-i18n="ctx.json">Скачать .json</button>
+      </div>
+    </div>
+
+    <div class="drawer__body" id="ctx-body"></div>
+  </aside>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

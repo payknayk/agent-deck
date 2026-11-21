@@ -1,0 +1,36 @@
+{
+ "session_id": "mvs_cb27c1cd76104b34a28011db8f803eaa",
+ "title": "(без названия)",
+ "agent": "mavis",
+ "status": "idle",
+ "model": "minimax/MiniMax-M2.7",
+ "workspace": "C:\\Users\\spay\\.minimax-agent",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 553,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 23867,
+  "total": 24420,
+  "cost_usd": 0.0,
+  "turns": 1
+ },
+ "messages": [
+  {
+   "ts": 1789733177650,
+   "role": "user",
+   "type": 1,
+   "text": "От бабушки осталась квартира, от дедушки дача. Но мама говорит что по наследству это перешло к ней, а ни каких прав не имею"
+  },
+  {
+   "ts": 1789733352985,
+   "role": "assistant",
+   "type": 1,
+   "text": "Это вопрос о российском наследственном праве. Вот ключевые моменты, которые стоит знать:\n\n## Очерёдность наследования\n\nПо Гражданскому кодексу РФ (глава 63), наследники делятся на очереди:\n\n- **1 очередь** — дети, супруг, родители наследодателя\n- **2 очередь** — братья, сёстры, дедушки, бабушки\n\nВы как **внук/внучка** — это **не самостоятельная очередь**. Вы можете наследовать только:\n\n### 1. По праву представления\nЕсли ваш родитель (сын/дочь бабушки или дедушки) **умер раньше** них, то вы занимаете место своего родителя в очереди. То есть вместо умершего отца/матери получаете его долю.\n\n### 2. По завещанию\nЕсли бабушка или дедушка **оставили завещание**, где вы прямо указаны как наследник — тогда вы имеете право.\n\n## Что делать?\n\n1. **Уточните**, в каком году умерли бабушка и дедушка\n2. **Выясните**, составлялось ли завещание\n3. **Проверьте**, жив ли ваш родитель (через которого могло перейти право представления)\n\nЕсли мама получила свидетельство о праве на наследство — это не значит, что она единственный собственник сейчас. Но разбираться нужно с документами.\n\n**Рекомендую обратиться к нотариусу**, который вёл наследственное дело, или к юристу по наследственным спорам — они смогут проверить конкретную ситуацию по документам.",
+   "thinking": "The user is asking about inheritance law in Russia. They say they have an apartment from their grandmother and a dacha from their grandfather, but their mother says it went to her through inheritance and the user has no rights to it. This is a legal question about Russian inheritance law.\n\nLet me think about what I know about Russian inheritance law:\n\n1. In Russia, heirs of the first queue (дети, супруг, родители) have priority\n2. Grandchildren can inherit by representation (по праву представления) if their parent (the child of the grandparent) died before the grandparent\n3. The user would be a grandchild, so they would be in the second queue of heirs\n"
+  }
+ ]
+}

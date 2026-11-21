@@ -1,0 +1,35 @@
+{
+ "session_id": "mvs_12df02a38b0c43d0a6d454f18925759e",
+ "title": "привет",
+ "agent": "mavis",
+ "status": "interrupted",
+ "model": "custom_provider:lm/spark-x2.6-4b",
+ "workspace": "C:\\Users\\spay\\.minimax\\sessions\\mvs_12df02a38b0c43d0a6d454f18925759e\\workspace",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792855072784,
+   "role": "user",
+   "type": 1,
+   "text": "привет"
+  },
+  {
+   "ts": 1792856386298,
+   "role": "assistant",
+   "type": null,
+   "text": ""
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "session_id": "mvs_d066703c3467495dac2807fe3a6ed4fd",
+ "title": "/deploy-website Create a ..... website",
+ "agent": "mavis",
+ "status": "error",
+ "model": "custom_provider:lmstudio/qwen/qwen3-30b-a3b-2507",
+ "workspace": "C:\\Users\\spay\\.minimax-agent\\projects",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1789666717421,
+   "role": "user",
+   "type": 1,
+   "text": "/deploy-website Create a ..... website"
+  },
+  {
+   "ts": 1789666997196,
+   "role": "user",
+   "type": 1,
+   "text": "ее"
+  }
+ ]
+}

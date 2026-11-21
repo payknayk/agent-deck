@@ -1,0 +1,35 @@
+{
+ "session_id": "mvs_3d58408de290429aaab6440377dee916",
+ "title": "@mini-studio Browse my OpenViking context",
+ "agent": "mavis",
+ "status": "aborted",
+ "model": "custom_provider:opencode-go/step-5-preview-free",
+ "workspace": "C:\\Users\\spay\\Documents\\за\\saasagent",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1793862621675,
+   "role": "user",
+   "type": 1,
+   "text": "@mini-studio Browse my OpenViking context"
+  },
+  {
+   "ts": 1793862754185,
+   "role": "user",
+   "type": 1,
+   "text": "Install the OpenViking memory plugin and help me start using it. OpenViking is a context database for AI agents (https://github.com/volcengine/OpenViking); the command and link below are from its official docs.\r\n\r\n1. Run the official installer. It needs network access and writes to my home directory; if your sandbox blocks that, ask me for approval:\r\n   curl -fsSL https://openviking.ai/install | bash -s -- --yes --lang en --url <SERVER_URL> --api-key <API_KEY>\r\n2. Once it's installed, read the OpenViking onboarding guide and use it to walk me through setup. The guide has you ask me before choices like importing history or adding a working rule. docs.openviking.ai and docs.openviking.net are the same docs site; use whichever loads:\r\n   https://docs.openviking.ai/agents/en/onboarding.md\r\n\r\nThe API key is a user key I created for myself on that server; the installer stores it in ~/.openviking/ovcli.conf on this machine. Use it in the command as it is; there's no need to show it in your replies, and don't write it into any other file or rule. Talk to me in English."
+  }
+ ]
+}

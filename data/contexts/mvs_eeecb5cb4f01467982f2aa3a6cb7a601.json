@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_eeecb5cb4f01467982f2aa3a6cb7a601",
+ "title": "@mini-studio Open OpenViking Mini Studio",
+ "agent": "mavis",
+ "status": "error",
+ "model": "custom_provider:opencode-go/cat-jam-free",
+ "workspace": "C:\\Users\\spay\\Documents\\за\\saasagent",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1793862548390,
+   "role": "user",
+   "type": 1,
+   "text": "@mini-studio Open OpenViking Mini Studio"
+  }
+ ]
+}

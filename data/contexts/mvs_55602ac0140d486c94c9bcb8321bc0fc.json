@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_55602ac0140d486c94c9bcb8321bc0fc",
+ "title": "/deploy-website Create a ..... website",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\Documents",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792744584919,
+   "role": "user",
+   "type": 1,
+   "text": "/deploy-website Create a ..... website"
+  }
+ ]
+}

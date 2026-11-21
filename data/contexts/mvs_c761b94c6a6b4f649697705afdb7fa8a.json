@@ -1,0 +1,41 @@
+{
+ "session_id": "mvs_c761b94c6a6b4f649697705afdb7fa8a",
+ "title": "ее",
+ "agent": "mavis",
+ "status": "interrupted",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\.minimax-agent\\projects\\600",
+ "messages_kept": 3,
+ "messages_total": 3,
+ "truncated": false,
+ "tokens": {
+  "input": 64771,
+  "output": 691,
+  "reasoning": 0,
+  "cache_read": 4096,
+  "cache_write": 0,
+  "total": 69558,
+  "cost_usd": 0.0,
+  "turns": 2
+ },
+ "messages": [
+  {
+   "ts": 1792919206939,
+   "role": "user",
+   "type": 1,
+   "text": "ее"
+  },
+  {
+   "ts": 1792919541875,
+   "role": "assistant",
+   "type": null,
+   "text": ""
+  },
+  {
+   "ts": 1792976607592,
+   "role": "user",
+   "type": 1,
+   "text": "?"
+  }
+ ]
+}

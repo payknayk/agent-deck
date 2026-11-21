@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_651b3d1cca334cda9d1f83ecaaccd96a",
+ "title": "Tell me what you can do and what capabilities you ",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\Documents",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792787675186,
+   "role": "user",
+   "type": 1,
+   "text": "Tell me what you can do and what capabilities you have."
+  }
+ ]
+}

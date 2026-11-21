@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_a3eaeb86aa4d4daeba47def015f4cd5c",
+ "title": "сделай навык который каждые 10 мин создает отчет о",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\Documents\\за",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792948771661,
+   "role": "user",
+   "type": 1,
+   "text": "сделай навык который каждые 10 мин создает отчет о том что делал пользователь"
+  }
+ ]
+}

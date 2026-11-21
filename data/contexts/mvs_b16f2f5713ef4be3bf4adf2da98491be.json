@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_b16f2f5713ef4be3bf4adf2da98491be",
+ "title": "pipeline-monitor",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M2.7",
+ "workspace": "C:\\Users\\spay\\.minimax\\agents\\mavis\\miniapps\\pipeline-monitor",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792361738438,
+   "role": "user",
+   "type": 1,
+   "text": "Read my user memory and agent memory. Return a JSON array of my current goals, priorities, and ongoing tasks. Format: [{\"id\":\"...\",\"text\":\"...\",\"priority\":\"high|medium|low\",\"source\":\"memory|conversation|file\",\"updatedAt\":\"...\"}] Do not include sensitive data (passwords, tokens, keys). Return ONLY the JSON array, no explanation. If no goals found, return []."
+  }
+ ]
+}

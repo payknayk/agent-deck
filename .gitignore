@@ -1,0 +1,11 @@
+# staging-копия для публикации (собирается tools/build_site.py)
+dist/
+
+# временные профили браузера
+.tmp-chrome-profile/
+
+# служебное
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

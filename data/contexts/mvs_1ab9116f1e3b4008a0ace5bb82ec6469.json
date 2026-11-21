@@ -1,0 +1,22 @@
+{
+ "session_id": "mvs_1ab9116f1e3b4008a0ace5bb82ec6469",
+ "title": "(без названия)",
+ "agent": "mavis",
+ "status": "idle",
+ "model": "custom_provider:lmnn/gemma-4-e2b-uncensored-hauhaucs-aggressive",
+ "workspace": "C:\\Users\\spay\\.minimax-agent",
+ "messages_kept": 0,
+ "messages_total": 0,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": []
+}

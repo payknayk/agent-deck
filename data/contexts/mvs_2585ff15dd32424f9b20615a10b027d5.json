@@ -1,0 +1,29 @@
+{
+ "session_id": "mvs_2585ff15dd32424f9b20615a10b027d5",
+ "title": "сделай навык который каждые 30 мин создает отчет к",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M3",
+ "workspace": "C:\\Users\\spay\\Documents\\за",
+ "messages_kept": 1,
+ "messages_total": 1,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1792948734734,
+   "role": "user",
+   "type": 1,
+   "text": "сделай навык который каждые 30 мин создает отчет какие приложениея были запущенны"
+  }
+ ]
+}

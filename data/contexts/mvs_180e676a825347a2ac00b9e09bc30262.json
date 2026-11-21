@@ -1,0 +1,35 @@
+{
+ "session_id": "mvs_180e676a825347a2ac00b9e09bc30262",
+ "title": "(без названия)",
+ "agent": "mavis",
+ "status": "aborted",
+ "model": "custom_provider:lm/spark-x2.6-4b",
+ "workspace": "C:\\Users\\spay\\.minimax-agent",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 28627,
+  "output": 106,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 28733,
+  "cost_usd": 0.0,
+  "turns": 1
+ },
+ "messages": [
+  {
+   "ts": 1792920547183,
+   "role": "user",
+   "type": 1,
+   "text": " "
+  },
+  {
+   "ts": 1792920672099,
+   "role": "assistant",
+   "type": null,
+   "text": ""
+  }
+ ]
+}

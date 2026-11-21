@@ -1,0 +1,53 @@
+{
+ "session_id": "mvs_695955048a624a9d8556b401567ed937",
+ "title": "запустии музыку",
+ "agent": "mavis",
+ "status": "error",
+ "model": "minimax/MiniMax-M2.7-highspeed",
+ "workspace": "C:\\Users\\spay\\.minimax\\sessions\\mvs_695955048a624a9d8556b401567ed937\\workspace",
+ "messages_kept": 5,
+ "messages_total": 5,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1789666259389,
+   "role": "user",
+   "type": 1,
+   "text": "запустии музыку"
+  },
+  {
+   "ts": 1789666301236,
+   "role": "user",
+   "type": 1,
+   "text": "музыка"
+  },
+  {
+   "ts": 1789666308883,
+   "role": "user",
+   "type": 1,
+   "text": "музыка"
+  },
+  {
+   "ts": 1789666388370,
+   "role": "user",
+   "type": 1,
+   "text": "музыка"
+  },
+  {
+   "ts": 1789666422284,
+   "role": "user",
+   "type": 1,
+   "text": "музыка"
+  }
+ ]
+}

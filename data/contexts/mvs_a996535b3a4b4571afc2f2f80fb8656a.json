@@ -1,0 +1,22 @@
+{
+ "session_id": "mvs_a996535b3a4b4571afc2f2f80fb8656a",
+ "title": "(без названия)",
+ "agent": "mavis",
+ "status": "idle",
+ "model": "minimax/MiniMax-M3.1-Flash",
+ "workspace": "C:\\Users\\spay\\Documents",
+ "messages_kept": 0,
+ "messages_total": 0,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": []
+}

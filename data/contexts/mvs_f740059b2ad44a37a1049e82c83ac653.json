@@ -1,0 +1,35 @@
+{
+ "session_id": "mvs_f740059b2ad44a37a1049e82c83ac653",
+ "title": "(без названия)",
+ "agent": "mavis",
+ "status": "error",
+ "model": "custom_provider:lmnn/google/gemma-4-26b-a4b",
+ "workspace": "C:/Users/spay/Documents/за",
+ "messages_kept": 2,
+ "messages_total": 2,
+ "truncated": false,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "reasoning": 0,
+  "cache_read": 0,
+  "cache_write": 0,
+  "total": 0,
+  "cost_usd": 0.0,
+  "turns": 0
+ },
+ "messages": [
+  {
+   "ts": 1794517556812,
+   "role": "user",
+   "type": 1,
+   "text": "день ссделай и ракурс чуть смени"
+  },
+  {
+   "ts": 1794517761588,
+   "role": "assistant",
+   "type": null,
+   "text": ""
+  }
+ ]
+}
